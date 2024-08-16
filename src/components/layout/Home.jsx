@@ -12,6 +12,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight, faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import project from '../../assets/images/project.png';
 import qulity_sec from '../../assets/images/qulity_sec.png';
+import qulity_blur from '../../assets/images/qulity_blur.png';
+import newsletter from '../../assets/images/newsletter.png';
+import Footer from "../Footer";
+import Insights from "../Insights";
 
 function Home() {
   return (
@@ -67,11 +71,14 @@ function Home() {
                   customers. That's why we proudly guarantee the quality
                   and reliability of our products.
                 </p>
-                <Button>Get Started</Button>
+                <Button className="btn-style">Get Started</Button>
               </div>
             </Col>
             <Col md={6} lg={6}>
-              <h1>sfr</h1>
+              <div className="insights-count">
+                <Insights />
+              </div>
+
             </Col>
             <Col md={11} lg={11}>
               <div className="about-bg">
@@ -122,7 +129,7 @@ function Home() {
           </Col>
           <div className="qulity-image">
             <Row>
-              <Col md={4} lg={4}>
+              <Col md={5} lg={5}>
                 <div>
                   <h2>
                     Design a cozy and fresh interior.
@@ -130,18 +137,39 @@ function Home() {
                   <p>
                     Crafting an Inviting Haven: Unveiling the Art of Designing a Cozy and Fresh Interior for Unmatched Comfort and Serenity
                   </p>
-                  <Button>Get Started</Button>
+                  <Button className="btn-style">Get Started</Button>
                 </div>
               </Col>
-              <Col md={4} lg={4}>
-                <div>
+              <Col md={6} lg={6}>
+                <div className="blur-img">
                   <img src={qulity_sec} />
+                  <FontAwesomeIcon className="blur-icon" icon={faArrowUp} />
                 </div>
               </Col>
             </Row>
           </div>
         </Container>
+        <img className="blur-halfimg" src={qulity_blur} />
       </section>
+      <section className="newsletter">
+        <Container>
+          <Row className="justify">
+            <Col md={12} lg={12}>
+              <div>
+                <h1>Let's combine our strengths</h1>
+              </div>
+            </Col>
+            <Col md={4} lg={4}>
+              <div className="news-img">
+                <div className="news-after"></div>
+                <img src={newsletter} />
+                <FontAwesomeIcon className="news-icon" icon={faArrowUp} />
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      <Footer />
     </>
   );
 
